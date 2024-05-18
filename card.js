@@ -273,5 +273,5 @@ function saveImage(){
   //canvas を探索
   var cvs = document.getElementById('srcImg');
   //canvas の dataURL を Blob に変換し保存
-  saveBlob(dataUrlToBlob(cvs.toDataURL()), 'splatoon-card.png');
+  saveBlob(dataUrlToBlob(cvs.toDataURL()), 'bleague-card.png');
 }
