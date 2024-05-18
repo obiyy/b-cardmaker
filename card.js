@@ -8,11 +8,13 @@ function MkCard()
   var aTeam = $('._js_team').val();
   var aPlayer = $('._js_player').val();
   var aMascot = $('._js_mascot').val();
+  var aFun = $('._js_fun').val();
   var aHitokoto = $('._js_hitokoto').val();
   var aCardImg = $('._js_card_img:checked').val();
 
     var img = new Image();
 	img.src = "https://bcardmaker.netlify.app/"+aCardImg;
+	// img.src = "/"+aCardImg;
 	var cvs = document.getElementById('srcImg');
     cvs.width = $('._js_none_img').width();
     cvs.height = $('._js_none_img').height();
@@ -73,115 +75,174 @@ function MkCard()
     aStrX += 0; aStrY += 60;
     ctxt.fillText(aName,aStrX,aStrY);
     
-    // ランク
+    // 好きなチーム
     aWakuX += 0; aWakuY += 180;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:250, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 125;
-    ctxt.fillText('ランク',aTitleX,aStrY);
-
-    ctxt.font = "80px 'Monotype Corsiva'";
-    var aRankX = aStrX+20; aStrY += 75;
-    ctxt.fillText(aRank,aRankX,aStrY);
-
-    // ウデマエ
-    aWakuX += 290; aWakuY += 0;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:600, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    ctxt.font = "30px 'Monotype Corsiva'";
-    var aUdemaeX = aTitleX + 295; var aUdemaeY = aStrY-75;
-    ctxt.fillText('エリア',aUdemaeX+30,aUdemaeY);
-    ctxt.fillText('ホコ',aUdemaeX+180,aUdemaeY);
-    ctxt.fillText('ヤグラ',aUdemaeX+320,aUdemaeY);
-    ctxt.fillText('アサリ',aUdemaeX+470,aUdemaeY);
-
-    ctxt.font = "70px 'Monotype Corsiva'";
-    aUdemaeStrX = aStrX;
-    ctxt.fillText(aUdemaeArea,aUdemaeStrX+300, aUdemaeY+70);
-    ctxt.fillText(aUdemaeHoko,aUdemaeStrX+450, aUdemaeY+70);
-    ctxt.fillText(aUdemaeYagura,aUdemaeStrX+600, aUdemaeY+70);
-    ctxt.fillText(aUdemaeAsari,aUdemaeStrX+760, aUdemaeY+70);
-
-    // チーム
-    aWakuX -= 290; aWakuY += 180;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 105;
-    ctxt.fillText('チーム',aTitleX,aStrY);
-
-    ctxt.font = "40px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 45;
-    ctxt.fillText(aTeam,aStrX,aStrY);
-
-    // 時間帯
-    aWakuX += 455; aWakuY += 0;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX += 455; aStrY -= 45;
-    ctxt.fillText('ジカンタイ',aTitleX+455,aStrY);
-
-    ctxt.font = "35px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 45;
-    var aTimeList = MkText( ctxt, aTime, 400 );
-    var aTmpStrY = aStrY;
-    for( var aCnt = 0; aCnt < aTimeList.length; aCnt++)
-    {
-        ctxt.fillText( aTimeList[ aCnt ], aStrX, aTmpStrY );
-        if ( aCnt+1 < aTimeList.length )
-        {
-          aTmpStrY += 40;
-        }
-    }
-
-    // フレコ
-    aWakuX -= 455; aWakuY += 180;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX -= 455; aStrY += 135;
-    ctxt.fillText('フレコ',aTitleX,aStrY);
-
-    ctxt.font = "45px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 45;
-    ctxt.fillText(aFriendCode,aStrX,aStrY);
-
-    // ツウワ
-    aWakuX += 455; aWakuY += 0;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX += 455; aStrY -= 45;
-    ctxt.fillText('ツウワ',aTitleX+455,aStrY);
-
-    ctxt.font = "35px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 40;
-    var aTalkList = MkText( ctxt, aTalk, 400 );
-    var aTmpStrY = aStrY;
-    for( var aCnt = 0; aCnt < aTalkList.length; aCnt++)
-    {
-        ctxt.fillText( aTalkList[ aCnt ], aStrX, aTmpStrY );
-        if ( aCnt+1 < aTalkList.length )
-        {
-          aTmpStrY += 40;
-        }
-    }
-
-    // ブキ
-    aWakuX -= 455; aWakuY += 180;
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX -= 455; aStrY += 135;
-    ctxt.fillText('ブキ',aTitleX,aStrY);
+    aStrX += 0; aStrY += 125;
+    ctxt.fillText('好きなチーム',aTitleX,aStrY);
 
     ctxt.font = "35px 'Monotype Corsiva'";
+    var aTeamX = aStrX+20; aStrY += 55;
+    ctxt.fillText(aTeam,aTeamX,aStrY);
+
+    // 好きな選手
+    aWakuX += 0; aWakuY += 180;
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    ctxt.font = "30px 'Monotype Corsiva'";
+    aStrX = aTitleX; aStrY += 125;
+    ctxt.fillText('好きな選手',aTitleX,aStrY);
+
+    ctxt.font = "35px 'Monotype Corsiva'";
+    var aPlayerX = aStrX+20; aStrY += 55;
+    ctxt.fillText(aPlayer,aPlayerX,aStrY);
+
+    // 好きなマスコット
+    aWakuX = 50; aWakuY += 180;
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    ctxt.font = "30px 'Monotype Corsiva'";
+    aStrX = 70; aStrY += 125;
+    ctxt.fillText('好きなマスコット',aTitleX,aStrY);
+
+    ctxt.font = "35px 'Monotype Corsiva'";
+    var aRankX = aStrX+20; aStrY += 55;
+    ctxt.fillText(aMascot,aRankX,aStrY);
+
+    // アリーナの楽しみ方
+    aWakuX += 0; aWakuY += 180;
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:200, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    ctxt.font = "30px 'Monotype Corsiva'";
+    aStrX += 0; aStrY += 125;
+    ctxt.fillText('アリーナの楽しみ方',aTitleX,aStrY);
+
+    ctxt.font = "35px 'Monotype Corsiva'";
+    var aFunList = MkText( ctxt, aFun, 850);
     aStrX += 0; aStrY += 40;
-    var aBukiList = MkText( ctxt, aBuki, 850);
-    var aTmpStrY = aStrY;
-    for( var aCnt = 0; aCnt < aBukiList.length; aCnt++)
+    for( var aCnt = 0; aCnt < aFunList.length; aCnt++)
     {
-        ctxt.fillText( aBukiList[ aCnt ], aStrX, aTmpStrY );
-        if ( aCnt+1 < aBukiList.length )
-        {
-          aTmpStrY += 40;
-        }
+        ctxt.fillText( aFunList[ aCnt ], aStrX, aStrY );
+        aStrY += 40;
     }
+
+    // 観戦スタイル
+    aWakuX += 0; aWakuY += 250;
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:440, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    ctxt.font = "30px 'Monotype Corsiva'";
+    aStrX += 0; aStrY += 175;
+    ctxt.fillText('観戦スタイル',aTitleX,aStrY);
+
+    ctxt.font = "35px 'Monotype Corsiva'";
+    var aViewStyleX = aStrX+20; aStrY += 75;
+    ctxt.fillText(aViewStyle,aViewStyleX,aStrY);
+
+      // よくみる観戦エリア
+      aWakuX += 0; aWakuY += 180;
+      drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:440, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+      ctxt.font = "30px 'Monotype Corsiva'";
+      aStrX += 0; aStrY += 125;
+      ctxt.fillText('観戦スタイル',aTitleX,aStrY);
+  
+      ctxt.font = "35px 'Monotype Corsiva'";
+      var aViewAreaX = aStrX+20; aStrY += 75;
+      ctxt.fillText(aViewArea,aViewAreaX,aStrY);
+    // // ウデマエ
+    // aWakuX += 290; aWakuY += 180;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:600, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // var aUdemaeX = aTitleX + 295; var aUdemaeY = aStrY-75;
+    // ctxt.fillText('エリア',aUdemaeX+30,aUdemaeY);
+    // ctxt.fillText('ホコ',aUdemaeX+180,aUdemaeY);
+    // ctxt.fillText('ヤグラ',aUdemaeX+320,aUdemaeY);
+    // ctxt.fillText('アサリ',aUdemaeX+470,aUdemaeY);
+
+    // ctxt.font = "70px 'Monotype Corsiva'";
+    // aUdemaeStrX = aStrX;
+    // ctxt.fillText(aUdemaeArea,aUdemaeStrX+300, aUdemaeY+70);
+    // ctxt.fillText(aUdemaeHoko,aUdemaeStrX+450, aUdemaeY+70);
+    // ctxt.fillText(aUdemaeYagura,aUdemaeStrX+600, aUdemaeY+70);
+    // ctxt.fillText(aUdemaeAsari,aUdemaeStrX+760, aUdemaeY+70);
+
+    // // チーム
+    // aWakuX -= 290; aWakuY += 180;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 105;
+    // ctxt.fillText('チーム',aTitleX,aStrY);
+
+    // ctxt.font = "40px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 45;
+    // ctxt.fillText(aTeam,aStrX,aStrY);
+
+    // // 時間帯
+    // aWakuX += 455; aWakuY += 0;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // aStrX += 455; aStrY -= 45;
+    // ctxt.fillText('ジカンタイ',aTitleX+455,aStrY);
+
+    // ctxt.font = "35px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 45;
+    // var aTimeList = MkText( ctxt, aTime, 400 );
+    // var aTmpStrY = aStrY;
+    // for( var aCnt = 0; aCnt < aTimeList.length; aCnt++)
+    // {
+    //     ctxt.fillText( aTimeList[ aCnt ], aStrX, aTmpStrY );
+    //     if ( aCnt+1 < aTimeList.length )
+    //     {
+    //       aTmpStrY += 40;
+    //     }
+    // }
+
+    // // フレコ
+    // aWakuX -= 455; aWakuY += 180;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // aStrX -= 455; aStrY += 135;
+    // ctxt.fillText('フレコ',aTitleX,aStrY);
+
+    // ctxt.font = "45px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 45;
+    // ctxt.fillText(aFriendCode,aStrX,aStrY);
+
+    // // ツウワ
+    // aWakuX += 455; aWakuY += 0;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:425, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // aStrX += 455; aStrY -= 45;
+    // ctxt.fillText('ツウワ',aTitleX+455,aStrY);
+
+    // ctxt.font = "35px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 40;
+    // var aTalkList = MkText( ctxt, aTalk, 400 );
+    // var aTmpStrY = aStrY;
+    // for( var aCnt = 0; aCnt < aTalkList.length; aCnt++)
+    // {
+    //     ctxt.fillText( aTalkList[ aCnt ], aStrX, aTmpStrY );
+    //     if ( aCnt+1 < aTalkList.length )
+    //     {
+    //       aTmpStrY += 40;
+    //     }
+    // }
+
+    // // ブキ
+    // aWakuX -= 455; aWakuY += 180;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // aStrX -= 455; aStrY += 135;
+    // ctxt.fillText('ブキ',aTitleX,aStrY);
+
+    // ctxt.font = "35px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 40;
+    // var aBukiList = MkText( ctxt, aBuki, 850);
+    // var aTmpStrY = aStrY;
+    // for( var aCnt = 0; aCnt < aBukiList.length; aCnt++)
+    // {
+    //     ctxt.fillText( aBukiList[ aCnt ], aStrX, aTmpStrY );
+    //     if ( aCnt+1 < aBukiList.length )
+    //     {
+    //       aTmpStrY += 40;
+    //     }
+    // }
 
     // ヒトコト
     aWakuX += 0; aWakuY += 180;
