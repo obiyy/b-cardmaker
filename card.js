@@ -3,21 +3,16 @@ function MkCard()
 	$("<a href='#popup' data-rel='dialog'></a>").click();
   var aName = $('._js_name').val();
   var aSeibetu = $('._js_seibetu:checked').val()
-  var aRank = $('._js_rank').val();
-  var aUdemaeArea = $('._js_udemae_area option:selected').val();
-  var aUdemaeHoko = $('._js_udemae_hoko option:selected').val();
-  var aUdemaeYagura = $('._js_udemae_yagura option:selected').val();
-  var aUdemaeAsari = $('._js_udemae_asari option:selected').val();
+  var aViewStyle = $('._js_view_style option:selected').val();
+  var aViewArea = $('._js_view_area option:selected').val();
   var aTeam = $('._js_team').val();
-  var aBuki = $('._js_buki').val();
-  var aTime = $('._js_time').val();
-  var aFriendCode = $('._js_friend_code').val();
-  var aTalk = $('._js_talk').val();
+  var aPlayer = $('._js_player').val();
+  var aMascot = $('._js_mascot').val();
   var aHitokoto = $('._js_hitokoto').val();
   var aCardImg = $('._js_card_img:checked').val();
 
     var img = new Image();
-	img.src = "https://obiyy-spla.netlify.app/"+aCardImg;
+	img.src = "https://bcardmaker.netlify.app/"+aCardImg;
 	var cvs = document.getElementById('srcImg');
     cvs.width = $('._js_none_img').width();
     cvs.height = $('._js_none_img').height();
@@ -28,7 +23,7 @@ function MkCard()
     if ( aNewCardFlg )
     {
         var img2 = new Image();
-        img2.src = "https://obiyy-spla.netlify.app/"+aCardImg;
+        img2.src = "https://bcardmaker.netlify.app/"+aCardImg;
         var ctxt2 = cvs.getContext('2d');
         aScale2 = aScale;
         aScale = aScale * 0.74;
@@ -63,13 +58,13 @@ function MkCard()
     ctxt.lineWidth = 6;
     ctxt.lineJoin = 'round';
     ctxt.fillStyle = '#fff';
-    ctxt.fillText('スプラ２自己紹介カード',150,60);
+    ctxt.fillText('Bリーグ自己紹介カード',150,60);
 
     // 名前、性別
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.9)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     ctxt.fillStyle = '#000';
-    ctxt.fillText('ナマエ',aTitleX,aStrY);
+    ctxt.fillText('NAME',aTitleX,aStrY);
     ctxt.font = "60px 'Monotype Corsiva'";
     if ( aSeibetu )
     {
