@@ -62,7 +62,7 @@ function MkCard()
     ctxt.fillText('Bリーグ自己紹介カード',150,60);
 
     // 名前、性別
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.9)"});
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:980, height:130, radius: 20, color:"rgba(255, 255, 255, 0.9)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     ctxt.fillStyle = '#000';
     ctxt.fillText('NAME',aTitleX,aStrY);
@@ -76,7 +76,7 @@ function MkCard()
     
     // 好きなチーム
     aWakuX += 0; aWakuY += 180;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:485, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     aStrX += 0; aStrY += 125;
     ctxt.fillText('好きなチーム',aTitleX,aStrY);
@@ -86,11 +86,11 @@ function MkCard()
     ctxt.fillText(aTeam,aTeamX,aStrY);
 
     // 好きな選手
-    aWakuX += 0; aWakuY += 180;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:900, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    aWakuX += 490; aWakuY += 0;
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:485, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX = aTitleX; aStrY += 125;
-    ctxt.fillText('好きな選手',aTitleX,aStrY);
+    aStrX = aTitleX+500; aStrY += -55;
+    ctxt.fillText('好きな選手',aTitleX+500,aStrY);
 
     ctxt.font = "35px 'Monotype Corsiva'";
     var aPlayerX = aStrX+20; aStrY += 55;
@@ -124,26 +124,26 @@ function MkCard()
     }
 
     // 観戦スタイル
+    // aWakuX += 0; aWakuY += 250;
+    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:440, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    // aStrX += 0; aStrY += 175;
+    // ctxt.fillText('観戦スタイル',aTitleX,aStrY);
+
+    // ctxt.font = "35px 'Monotype Corsiva'";
+    // var aViewStyleX = aStrX+20; aStrY += 75;
+    // ctxt.fillText(aViewStyle,aViewStyleX,aStrY);
+
+    // よくみる観戦エリア
     aWakuX += 0; aWakuY += 250;
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:440, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:980, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
-    aStrX += 0; aStrY += 175;
+    aStrX += 0; aStrY += 195;
     ctxt.fillText('観戦スタイル',aTitleX,aStrY);
 
     ctxt.font = "35px 'Monotype Corsiva'";
-    var aViewStyleX = aStrX+20; aStrY += 75;
-    ctxt.fillText(aViewStyle,aViewStyleX,aStrY);
-
-      // よくみる観戦エリア
-      aWakuX += 0; aWakuY += 180;
-      drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:440, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-      ctxt.font = "30px 'Monotype Corsiva'";
-      aStrX += 0; aStrY += 125;
-      ctxt.fillText('観戦スタイル',aTitleX,aStrY);
-  
-      ctxt.font = "35px 'Monotype Corsiva'";
-      var aViewAreaX = aStrX+20; aStrY += 75;
-      ctxt.fillText(aViewArea,aViewAreaX,aStrY);
+    var aViewAreaX = aStrX+20; aStrY += 75;
+    ctxt.fillText(aViewArea,aViewAreaX,aStrY);
     // // ウデマエ
     // aWakuX += 290; aWakuY += 180;
     // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:600, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
