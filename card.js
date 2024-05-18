@@ -15,7 +15,6 @@ function MkCard()
 
     var img = new Image();
 	img.src = "https://bcardmaker.netlify.app/"+aCardImg;
-	// img.src = "file:///C:/Users/obino/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/project/b-cardmaker/"+aCardImg;
 	var cvs = document.getElementById('srcImg');
     cvs.width = $('._js_none_img').width();
     cvs.height = $('._js_none_img').height();
@@ -64,7 +63,7 @@ function MkCard()
     ctxt.fillText('Bリーグ自己紹介カード',300,60);
 
     // 名前、性別
-    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1090, height:130, radius: 20, color:"rgba(255, 255, 255, 0.9)"});
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1090, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     ctxt.fillStyle = '#000';
     ctxt.fillText('NAME',aTitleX,aStrY);
