@@ -66,7 +66,7 @@ function MkCard()
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1090, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     ctxt.fillStyle = '#000';
-    ctxt.fillText('NAME',aTitleX,aStrY);
+    ctxt.fillText('名前',aTitleX,aStrY);
     ctxt.font = "60px 'Monotype Corsiva'";
     if ( aSeibetu )
     {
