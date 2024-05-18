@@ -122,7 +122,7 @@ function MkCard()
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:645, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     aStrX += aTitleX+655; aStrY += -55;
-    ctxt.fillText('すきな座席', aTitleX+655,aStrY);
+    ctxt.fillText('好きな座席', aTitleX+655,aStrY);
 
     ctxt.font = "35px 'Monotype Corsiva'";
     var aViewAreaX = aStrX-40; aStrY += 55;
