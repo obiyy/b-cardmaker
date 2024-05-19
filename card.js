@@ -2,7 +2,7 @@ function MkCard()
 {
 	$("<a href='#popup' data-rel='dialog'></a>").click();
   var aName = $('._js_name').val();
-  var aSeibetu = $('._js_seibetu:checked').val()
+//   var aSeibetu = $('._js_seibetu:checked').val()
   var aViewStyle = $('._js_view_style').val();
   var aViewArea = $('._js_view_area').val();
   var aTeam = $('._js_team').val();
@@ -70,10 +70,10 @@ function MkCard()
     ctxt.fillStyle = '#000';
     ctxt.fillText('名前',aTitleX,aStrY);
     ctxt.font = "60px 'Monotype Corsiva'";
-    if ( aSeibetu )
-    {
-      aName = aName + ' ('+aSeibetu+')';
-    }
+    // if ( aSeibetu )
+    // {
+    //   aName = aName + ' ('+aSeibetu+')';
+    // }
     aStrX += 0; aStrY += 60;
     ctxt.fillText(aName,aStrX,aStrY);
     
