@@ -15,8 +15,8 @@ function MkCard()
   var aCardImg = $('._js_card_img:checked').val();
 
     var img = new Image();
-	// img.src = "https://bcardmaker.netlify.app/"+aCardImg;
-	img.src = "./"+aCardImg;
+	img.src = "https://bcardmaker.netlify.app/"+aCardImg;
+	// img.src = "./"+aCardImg;
 	var cvs = document.getElementById('srcImg');
     cvs.width = $('._js_none_img').width();
     cvs.height = $('._js_none_img').height();
