@@ -147,7 +147,7 @@ function MkCard()
     }
 
     // 選手を好きになったきっかけ
-    aWakuX += 0; aWakuY += 250;
+    aWakuX += 0; aWakuY += 240;
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1300, height:200, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     aStrX = 70; aStrY = aWakuY + 40;
@@ -163,7 +163,7 @@ function MkCard()
     }
 
     // フリースペース
-    aWakuX += 0; aWakuY += 250;
+    aWakuX += 0; aWakuY += 240;
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1300, height:200, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     aStrX = 70; aStrY = aWakuY + 40;
