@@ -11,10 +11,12 @@ function MkCard()
   var aFun = $('._js_fun').val();
   var aReki = $('._js_reki').val();
   var aHitokoto = $('._js_hitokoto').val();
+  var aFunPlayer = $('._js_fun_player').val();
   var aCardImg = $('._js_card_img:checked').val();
 
     var img = new Image();
-	img.src = "https://bcardmaker.netlify.app/"+aCardImg;
+	// img.src = "https://bcardmaker.netlify.app/"+aCardImg;
+	img.src = "./"+aCardImg;
 	var cvs = document.getElementById('srcImg');
     cvs.width = $('._js_none_img').width();
     cvs.height = $('._js_none_img').height();
@@ -76,14 +78,14 @@ function MkCard()
     ctxt.fillText(aName,aStrX,aStrY);
     
    // ブースター歴
-   aWakuX += 1110; aWakuY += 0;
+   aWakuX += 1100; aWakuY += 0;
    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:200, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
    ctxt.font = "30px 'Monotype Corsiva'";
-   aStrX = aTitleX+1110; aStrY += -60;
+   aStrX = aTitleX+1100; aStrY += -60;
    ctxt.fillText('ブースター歴',aTitleX+1110,aStrY);
-   ctxt.font = "45px 'Monotype Corsiva'";
-   aStrX += 50; aStrY += 60;
-   ctxt.fillText(aReki,aStrX,aStrY);
+   ctxt.font = "60px 'Monotype Corsiva'";
+   aStrX += 30; aStrY += 60;
+   ctxt.fillText(aReki+"年",aStrX,aStrY);
 
     // 好きなチーム
     aWakuX = 50; aWakuY += 180;
@@ -92,8 +94,8 @@ function MkCard()
     aStrX = 70; aStrY += 125;
     ctxt.fillText('好きなチーム',aTitleX,aStrY);
 
-    ctxt.font = "35px 'Monotype Corsiva'";
-    var aTeamX = aStrX+20; aStrY += 55;
+    // ctxt.font = "30px 'Monotype Corsiva'";
+    var aTeamX = aStrX+10; aStrY += 55;
     ctxt.fillText(aTeam,aTeamX,aStrY);
 
     // 好きな選手
@@ -103,7 +105,7 @@ function MkCard()
     aStrX = aTitleX+655; aStrY += -55;
     ctxt.fillText('好きな選手',aTitleX+655,aStrY);
 
-    ctxt.font = "35px 'Monotype Corsiva'";
+    // ctxt.font = "35px 'Monotype Corsiva'";
     var aPlayerX = aStrX+20; aStrY += 55;
     ctxt.fillText(aPlayer,aPlayerX,aStrY);
 
@@ -113,8 +115,8 @@ function MkCard()
     ctxt.font = "30px 'Monotype Corsiva'";
     aStrX = 70; aStrY += 125;
     ctxt.fillText('好きなマスコット',aTitleX,aStrY);
-    ctxt.font = "35px 'Monotype Corsiva'";
-    var aRankX = aStrX+20; aStrY += 55;
+    // ctxt.font = "35px 'Monotype Corsiva'";
+    var aRankX = aStrX+10; aStrY += 55;
     ctxt.fillText(aMascot,aRankX,aStrY);
 
     // すきな座席
@@ -124,16 +126,16 @@ function MkCard()
     aStrX += aTitleX+655; aStrY += -55;
     ctxt.fillText('好きな座席', aTitleX+655,aStrY);
 
-    ctxt.font = "35px 'Monotype Corsiva'";
-    var aViewAreaX = aStrX-40; aStrY += 55;
+    // ctxt.font = "35px 'Monotype Corsiva'";
+    var aViewAreaX = aStrX-50; aStrY += 55;
     ctxt.fillText(aViewArea,aViewAreaX,aStrY);
     
-    // アリーナの楽しみ方
+    // バスケ観戦を始めたきっかけ
     aWakuX = 50; aWakuY += 180;
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1300, height:200, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
     aStrX = 70; aStrY += 125;
-    ctxt.fillText('アリーナの楽しみ方',aTitleX,aStrY);
+    ctxt.fillText('バスケ観戦を始めたきっかけ',aTitleX,aStrY);
 
     ctxt.font = "35px 'Monotype Corsiva'";
     var aFunList = MkText( ctxt, aFun, 1250);
@@ -144,18 +146,23 @@ function MkCard()
         aStrY += 40;
     }
 
-    // 観戦スタイル
-    // aWakuX += 0; aWakuY += 250;
-    // drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:440, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
-    // ctxt.font = "30px 'Monotype Corsiva'";
-    // aStrX += 0; aStrY += 175;
-    // ctxt.fillText('観戦スタイル',aTitleX,aStrY);
+    // 選手を好きになったきっかけ
+    aWakuX += 0; aWakuY += 250;
+    drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1300, height:200, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
+    ctxt.font = "30px 'Monotype Corsiva'";
+    aStrX = 70; aStrY = aWakuY + 40;
+    ctxt.fillText('選手を好きになったきっかけ',aTitleX,aStrY);
 
-    // ctxt.font = "35px 'Monotype Corsiva'";
-    // var aViewStyleX = aStrX+20; aStrY += 75;
-    // ctxt.fillText(aViewStyle,aViewStyleX,aStrY);
+    ctxt.font = "35px 'Monotype Corsiva'";
+    var aFunPlayerList = MkText( ctxt, aFunPlayer, 1250);
+    aStrX += 0; aStrY += 40;
+    for( var aCnt = 0; aCnt < aFunPlayerList.length; aCnt++)
+    {
+        ctxt.fillText( aFunPlayerList[ aCnt ], aStrX, aStrY );
+        aStrY += 40;
+    }
 
-    // ヒトコト
+    // フリースペース
     aWakuX += 0; aWakuY += 250;
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1300, height:200, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
     ctxt.font = "30px 'Monotype Corsiva'";
@@ -171,8 +178,8 @@ function MkCard()
         aStrY += 40;
     }
   }
-  document.getElementById("dstImg").src = null;
-	document.getElementById("dstImg").src = cvs.toDataURL();
+    document.getElementById("dstImg").src = null;
+    document.getElementById("dstImg").src = cvs.toDataURL();
 }
 
 function drawRect(param) 
