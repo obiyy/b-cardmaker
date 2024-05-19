@@ -62,7 +62,7 @@ function MkCard()
     ctxt.lineWidth = 6;
     ctxt.lineJoin = 'round';
     ctxt.fillStyle = '#fff';
-    ctxt.fillText('Bリーグ自己紹介カード',300,60);
+    ctxt.fillText('Bリーグ自己紹介カード',400,60);
 
     // 名前、性別
     drawRect({ ctx:ctxt, x:aWakuX, y:aWakuY, width:1090, height:130, radius: 20, color:"rgba(255, 255, 255, 0.8)"});
